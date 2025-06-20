@@ -3,7 +3,6 @@
    Autor: Julieta Sanchez
    Descripción: Estilo base para sitio de portfolio fotográfico
 --------------------------------- */
-
 /* Importación de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap');
 
@@ -28,6 +27,7 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   color: #444;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 /* Navegación */
@@ -131,4 +131,74 @@ footer {
   color: #fff;
   text-align: center;
   font-size: 0.9em;
+}
+/* --------- ESTILOS AVANZADOS --------- */
+
+/* Separación entre fotos de la galería (cuando uses Bootstrap en las páginas nuevas) */
+.galeria-item {
+  padding: 15px;
+}
+
+/* Animación hover sobre las fotos */
+figure:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+/* Control de overflow horizontal para evitar desbordes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+/* -----------------------------
+   Grid para index con 6 items
+-------------------------------*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+}
+
+.grid-container > div {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.grid-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.item3,
+.item4 {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #444;
+  font-family: 'Playfair Display', serif;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive para pantallas chicas */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
 }
