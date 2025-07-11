@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fuente-principal;
+  line-height: 1.6;
+  background-color: $color-fondo;
+  color: $color-texto;
+  padding: $espaciado-base;
+}
+
+h1, h2, h3 {
+  font-family: $fuente-titulos;
+  color: $color-encabezado;
+  margin-bottom: 10px;
+  text-align: center;
+}
