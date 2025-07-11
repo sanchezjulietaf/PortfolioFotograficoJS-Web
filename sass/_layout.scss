@@ -1,0 +1,37 @@
+nav {
+  ul {
+    list-style: none;
+    background-color: $color-negro;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      margin: 0 15px;
+
+      a {
+        color: $color-blanco;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          color: $color-hover;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin: $espaciado-base 0;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 15px;
+  background-color: $color-negro;
+  color: $color-blanco;
+  text-align: center;
+  font-size: 0.9em;
+}
