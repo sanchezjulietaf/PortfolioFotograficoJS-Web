@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap');
+@use 'variables' as v;
 
 * {
   margin: 0;
@@ -7,16 +7,16 @@
 }
 
 body {
-  font-family: $fuente-principal;
+  font-family: v.$fuente-principal;
   line-height: 1.6;
-  background-color: $color-fondo;
-  color: $color-texto;
-  padding: $espaciado-base;
+  background-color: v.$color-fondo;
+  color: v.$color-texto;
+  padding: v.$espaciado-base;
 }
 
 h1, h2, h3 {
-  font-family: $fuente-titulos;
-  color: $color-encabezado;
+  font-family: v.$fuente-titulos;
+  color: v.$color-encabezado;
   margin-bottom: 10px;
   text-align: center;
 }

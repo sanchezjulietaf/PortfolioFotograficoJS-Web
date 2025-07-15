@@ -1,6 +1,9 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
 figure {
   margin: 20px 0;
-  background-color: $color-blanco;
+  background-color: v.$color-blanco;
   padding: 10px;
   border-radius: 5px;
   text-align: center;
@@ -27,9 +30,9 @@ figcaption {
 
 // Formulario
 form {
-  background-color: $color-blanco;
+  background-color: v.$color-blanco;
   padding: 20px;
-  border: 1px solid $color-gris;
+  border: 1px solid v.$color-gris;
   border-radius: 5px;
   max-width: 600px;
   margin: 0 auto;
@@ -47,14 +50,14 @@ form {
     margin-top: 5px;
     border: 1px solid #999;
     border-radius: 3px;
-    font-family: $fuente-principal;
+    font-family: v.$fuente-principal;
   }
 
   button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: $color-negro;
-    color: $color-blanco;
+    background-color: v.$color-negro;
+    color: v.$color-blanco;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -74,10 +77,10 @@ form {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: $color-fondo;
+  background-color: v.$color-fondo;
 
   > div {
-    background-color: $color-blanco;
+    background-color: v.$color-blanco;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -85,7 +88,7 @@ form {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: $fuente-principal;
+    font-family: v.$fuente-principal;
   }
 
   img {
@@ -100,8 +103,8 @@ form {
 .item4 {
   font-style: italic;
   font-size: 1.2rem;
-  color: $color-encabezado;
-  font-family: $fuente-titulos;
+  color: v.$color-encabezado;
+  font-family: v.$fuente-titulos;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -109,8 +112,9 @@ form {
 }
 
 // Responsive
-@include respond-to(mobile) {
+@include m.respond-to(mobile) {
   .grid-container {
     grid-template-columns: 1fr;
   }
+
 }
