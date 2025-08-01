@@ -1,3 +1,53 @@
+%card {
+  background-color: $color-blanco;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+%boton {
+  display: inline-block;
+  //padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+.animado {
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 figure {
   margin: 20px 0;
   background-color: $color-blanco;
@@ -25,7 +75,6 @@ figcaption {
   color: #666;
 }
 
-// Formulario
 form {
   background-color: $color-blanco;
   padding: 20px;
@@ -51,14 +100,10 @@ form {
   }
 
   button {
-    margin-top: 15px;
-    padding: 10px 20px;
+    @extend %boton;
     background-color: $color-negro;
     color: $color-blanco;
-    border: none;
-    border-radius: 3px;
     cursor: pointer;
-    font-weight: bold;
 
     &:hover {
       background-color: #444;
@@ -66,7 +111,6 @@ form {
   }
 }
 
-// Grid del index
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -77,15 +121,10 @@ form {
   background-color: $color-fondo;
 
   > div {
-    background-color: $color-blanco;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    @extend %card;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-family: $fuente-principal;
   }
 
   img {
@@ -96,21 +135,122 @@ form {
   }
 }
 
-.item3,
-.item4 {
-  font-style: italic;
-  font-size: 1.2rem;
-  color: $color-encabezado;
-  font-family: $fuente-titulos;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.carousel-item img {
+  height: 250px;
+  object-fit: cover;
 }
 
-// Responsive
 @include respond-to(mobile) {
   .grid-container {
     grid-template-columns: 1fr;
+  }
+}
+
+.sobre-mi-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+}
+
+.sobre-mi-texto {
+  padding: 2rem;
+  background-color: $color-blanco;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+
+.sobre-mi-imagen-parallax {
+  background-image: url('../img/sobre-mi.jpg');
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 700px;
+  margin: 0;
+  padding: 0;
+
+  @include respond-to(mobile) {
+    background-attachment: scroll;
+    height: 300px;
+  }
+}
+.servicios-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 500px;
+  gap: 0; 
+  margin: 0; 
+  max-width: 100%; 
+  padding: 0; 
+
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+.servicios-imagen {
+  background-image: url('../img/servicios.webp');
+  background-attachment: fixed;
+  background-position: left center; 
+  background-size: contain; 
+  background-repeat: no-repeat;
+  height: 540px; 
+  width: 100%; 
+  box-shadow: none; 
+}
+
+.servicios-lista {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 2rem;
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: #222;
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicios-imagen {
+    background-attachment: scroll;
+    height: 300px;
   }
 }
