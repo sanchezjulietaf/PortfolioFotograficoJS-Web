@@ -1,3 +1,4 @@
+
 nav {
   ul {
     list-style: none;
@@ -17,6 +18,10 @@ nav {
 
         &:hover {
           color: $color-hover;
+        }
+
+        &.activo {
+          border-bottom: 2px solid $color-hover;
         }
       }
     }
